@@ -1,0 +1,109 @@
+{
+    "scopeName": "source.vek",
+    "fileTypes": [
+        "v"
+    ],
+    "name": "v",
+    "patterns": [
+        {
+            "comment": "string",
+            "match": "//.*",
+            "name": "comment.line.double-slash.vek"
+        },
+        {
+            "comment": "string",
+            "begin": "fmt\"}!",
+            "end": "\"",
+            "name": "string.quoted.double.vek",
+            "patterns": [{
+                    "match": "\\\\(\\\\|n|t|r|\\\"|[0-7][0-7][0-7]|x[0-9a-fA-F][0-9a-fA-F])",
+                    "name": "constant.character.escape.vek"
+                },
+                {
+                    "begin": "!",
+                    "end": "!",
+                    "patterns": [{"include": "$self"}]
+                }
+            ]
+        },
+        {
+            "comment": "string",
+            "begin": "fmt\"",
+            "end": "\"",
+            "name": "string.quoted.double.vek",
+            "patterns": [{
+                    "match": "\\\\(\\\\|n|t|r|\\\"|[0-7][0-7][0-7]|x[0-9a-fA-F][0-9a-fA-F])",
+                    "name": "constant.character.escape.vek"
+                },
+                {
+                    "begin": "{",
+                    "end": "}",
+                    "patterns": [{"include": "$self"}]
+                }
+            ]
+        },
+        {
+            "comment": "string",
+            "begin": "\"",
+            "end": "\"",
+            "name": "string.quoted.double.vek",
+            "patterns": [{
+                    "match": "\\\\(\\\\|n|t|r|\\\"|[0-7][0-7][0-7]|x[0-9a-fA-F][0-9a-fA-F])",
+                    "name": "constant.character.escape.vek"
+                }
+            ]
+        },
+        {
+            "comment": "string",
+            "begin": "'",
+            "end": "'",
+            "name": "string.quoted.double.vek",
+            "contentName": "constant.character.escape.vek",
+            "patterns": [{
+                    "match": ",",
+                    "name": "keyword.operator.vek"
+                }
+            ]
+        },
+        {
+            "comment": "suffix/prefix",
+            "match": "\\\\[a-zA-Z][a-zA-Z0-9]*",
+            "name": "variable.language.vek"
+        },
+        {
+            "comment": "operator",
+            "match": "(\\.\\.|&&|\\|\\||\\+|\\-|~|\\@|\\#|$|%|\\^|&|\\*|\\_|\\||\\?|/|\\.|>|<|\\,)\\:?",
+            "name": "keyword.operator.vek"
+        },
+        {
+            "match": "\\b(if|iff|ret|eff|seff|exc|def|else|elif|abort|ref|fmt|self|recv|send)\\b",
+            "name": "keyword.control.vek"
+        },
+        {
+            "comment": "operator, named",
+            "match": "\\b(val|not|neg|str|abs|ltrim|rtrim|sin|cos|asin|acos|tan|atan|ln|exp|sqrt|ceil|floor|first|last|rev|where|mins|any|sum|sums|prd|prds|min|max|hll|dist|grp|all|lower|trim|maxs|string|stringn|upper|type|lex|xtype|div|rand|in|INT|is|set|like|wtake|ss|vo|ov|list|ulist|tuple)\\b",
+            "name": "support.function.vek"
+        },
+        {
+            "match": "\\b(id|none|A\\.[a-zA-Z0-9]+)\\b",
+            "name": "support.constant.vek"
+        },
+        {
+            "match": "\\b(except|union|inter|out|oun|err|ern|dbg|show|parse|xparse|next|prev|raze|xesr|esr|ess|cnt|null|til|key|or|and)\\b",
+            "name": "support.function.vek"
+        },
+        {
+            "match": "0[nNwW][hilefcdzt]?",
+            "name": "constant.language.vek"
+        },
+        {
+            "match": "\\d(\\d|[a-zA-Z]|\\.|\\:)*",
+            "name": "constant.numeric.vek"
+        },
+        {
+            "match": "\\b[a-zA-Z][a-zA-Z0-9_.]*",
+            "name": "variable.parameter.vek"
+        }
+    ],
+    "uuid": "8c6b8b64-6815-6084-0a3e-178401251b68"
+}

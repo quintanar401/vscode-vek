@@ -1,0 +1,46 @@
+{
+    "name": "vek",
+    "displayName": "VekSynt",
+    "description": "The language support for Vek",
+    "version": "0.0.1",
+    "publisher": "quintanar401",
+    "engines": {
+        "vscode": "^1.12.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "keywords": [
+        "vek"
+    ],
+    "icon": "icon.png",
+    "homepage": "https://github.com/quintanar401/vscode-vek/blob/master/README.md",
+    "bugs": {
+        "url": "https://github.com/quintanar401/vscode-vek/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/quintanar401/vscode-vek"
+    },
+    "contributes": {
+        "languages": [
+            {
+                "id": "vek",
+                "aliases": [
+                    "vek"
+                ],
+                "extensions": [
+                    ".v"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "vek",
+                "scopeName": "source.vek",
+                "path": "./syntaxes/vek.tmLanguage.json"
+            }
+        ]
+    }
+}
